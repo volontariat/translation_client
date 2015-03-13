@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-
-  mount TranslationClient::Engine => "/translation_client"
+  mount TranslationClient::Engine => "/"
 end

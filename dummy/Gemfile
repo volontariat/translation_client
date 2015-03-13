@@ -1,0 +1,10 @@
+source "http://gems.github.com"
+source "http://rubygems.org"
+
+gemspec path: File.expand_path(File.dirname(__FILE__) + "/../")
+
+gem 'i18n-active_record', github: 'svenfuchs/i18n-active_record', require: 'i18n/active_record'
+
+gem 'home_page', path: '../../../home_page/home_page'
+
+gem 'devise', github: 'plataformatec/devise'
