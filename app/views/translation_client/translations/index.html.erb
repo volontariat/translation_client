@@ -1,0 +1,27 @@
+<% content_for :title do %><%= t 'translation_client.translations.index.title' %><% end %>
+<% if @translations.none? %>
+<p><%= t('translation_client.translations.empty_collection') %></p>
+<% else %>
+  <table class="table table-striped">
+    <thead>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <th style="width: 25px; vertical-align:top;"><%= t('translation_client.translations.locale') %></th>
+        <th style="width: 200px; vertical-align:top;"><%= t('translation_client.translations.key') %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @translations.each do |translation| %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td><%= translation.locale %></td>
+        <td><%= link_to translation.translation_key, translation_client.edit_translation_path(translation) %></td>
+        <td><%= link_to t('general.destroy'), translation_client.translation_path(translation), method: :delete, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </table>
+  <p>
+    <%= link_to translation_client.new_translation_path, class: 'btn btn-default' do %>
+      <span class="glyphicon glyphicon-plus"></span> <%= t('translation_client.translations.new.title') %>
+    <% end %>
+  </p>
+<% end %>

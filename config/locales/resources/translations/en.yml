@@ -1,0 +1,11 @@
+en:
+  translation_client:
+    translations:
+      index:
+        title: Translations
+        empty_collection: No translations available.
+        
+      new: 
+        title: New Translation
+      edit: 
+        title: Edit Translation
